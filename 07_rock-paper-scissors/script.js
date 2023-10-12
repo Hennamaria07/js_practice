@@ -1,11 +1,16 @@
-let score = JSON.parse(localStorage.getItem('score'));
-if(score === null) {
-  score = {
-    win: 0,
-    loss: 0,
-    tie: 0
-  }
-}
+let score = JSON.parse(localStorage.getItem("score")) || {
+  win: 0,
+  loss: 0,
+  tie: 0,
+};
+
+// if(score === null) {
+  // score = {
+  //   win: 0,
+  //   loss: 0,
+  //   tie: 0
+  // }
+// }
 
 function pickComputerMove() {
   let computerMove = "";
