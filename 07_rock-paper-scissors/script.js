@@ -1,3 +1,12 @@
+let score = JSON.parse(localStorage.getItem('score'));
+if(score === null) {
+  score = {
+    win: 0,
+    loss: 0,
+    tie: 0
+  }
+}
+
 function pickComputerMove() {
   let computerMove = "";
   const randomNumber = Math.floor(Math.random() * 3);
@@ -11,15 +20,9 @@ function pickComputerMove() {
   return computerMove;
 }
 
-const score = {
-  win: 0,
-  loss: 0,
-  tie: 0
-}
-
 function playGame(playerMove) {
   let computerMove = pickComputerMove();
-  let result = '';
+  let result = "";
   if (playerMove === "rock") {
     if (computerMove === "rock") {
       result = "Tie.";
@@ -37,26 +40,30 @@ function playGame(playerMove) {
       result = "You lose.";
     }
   } else if (playerMove === "scissors") {
-     if (computerMove === "rock") {
-       result = "You lose.";
-     } else if (computerMove === "paper") {
-       result = "You win.";
-     } else if (computerMove === "scissors") {
-       result = "Tie.";
-     }
+    if (computerMove === "rock") {
+      result = "You lose.";
+    } else if (computerMove === "paper") {
+      result = "You win.";
+    } else if (computerMove === "scissors") {
+      result = "Tie.";
+    }
   }
-  if(result === 'You win.') {
+  if (result === "You win.") {
     score.win += 1;
-  } else if(result === 'You lose.') {
+  } else if (result === "You lose.") {
     score.loss += 1;
-  } else if(result === 'Tie.') {
+  } else if (result === "Tie.") {
     score.tie += 1;
   }
-  alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}\nWins: ${score.win}, Losses: ${score.loss}, Ties: ${score.tie}`);
+  localStorage.setItem('score', JSON.stringify(score));
+  alert(
+    `You picked ${playerMove}. Computer picked ${computerMove}. ${result}\nWins: ${score.win}, Losses: ${score.loss}, Ties: ${score.tie}`
+  );
 }
-document.getElementById('reset-btn').addEventListener('click', (e) => {
-e.preventDefault();
-score.win = 0;
-score.loss = 0;
-score.tie = 0;
-})
+document.getElementById("reset-btn").addEventListener("click", (e) => {
+  e.preventDefault();
+  score.win = 0;
+  score.loss = 0;
+  score.tie = 0;
+  localStorage.removeItem('score');
+});
