@@ -54,3 +54,9 @@ function playGame(playerMove) {
   }
   alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}\nWins: ${score.win}, Losses: ${score.loss}, Ties: ${score.tie}`);
 }
+document.getElementById('reset-btn').addEventListener('click', (e) => {
+e.preventDefault();
+score.win = 0;
+score.loss = 0;
+score.tie = 0;
+})
