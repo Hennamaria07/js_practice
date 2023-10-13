@@ -7,9 +7,10 @@ document.getElementById("two-btn").addEventListener("click", function (event) {
   event.preventDefault();
   card(2);
 });
-document.getElementById("three-btn").addEventListener("click", function (event) {
+document.getElementById("remove-btn").addEventListener("click", function (event) {
   event.preventDefault();
-  card(3);
+  --cardQuantity;
+  console.log(`Card Quantity: ${cardQuantity}`);
 });
 document.getElementById("reset-btn").addEventListener("click", function (event) {
   event.preventDefault();
@@ -25,4 +26,12 @@ document.getElementById("show-btn").addEventListener("click", function (event) {
 function card(value) {
   cardQuantity += value;
   console.log(`Card Quantity: ${cardQuantity}`);
+  if(cardQuantity > 10) {
+    alert('Card is full');
+    return;
+  }
+  if(cardQuantity < 0) {
+    alert("Not enough items in the cart");
+    return;
+  }
 }
