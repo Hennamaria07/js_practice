@@ -14,12 +14,11 @@ subscribeBtn.addEventListener("click", (e) => {
     e.preventDefault();
     fetchContent();
   });
-  
   inputEl.addEventListener('keypress', (e) => {
    if(e.key === 'Enter'){
     fetchContent();
    }
-  });
+  })
 
   const fetchContent = () => {
     if (parseInt(inputEl.value) < 40) {

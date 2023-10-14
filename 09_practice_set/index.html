@@ -16,6 +16,13 @@
         <button id="submit-btn">Submit</button>
         <p id="text-el"></p>
     </p>
+    <input placeholder="Type something" class="js-input" onkeyup="
+            const inputElement = document.querySelector('.js-input');
+            document.querySelector('.js-message')
+              .innerHTML = inputElement.value;
+          ">
+    
+    <p class="js-message"></p>
     <script src="./script.js"></script>
 </body>
 </html>
