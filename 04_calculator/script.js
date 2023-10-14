@@ -46,13 +46,13 @@ document.getElementById("divide-btn").addEventListener("click", function () {
 });
 document.getElementById("equal-btn").addEventListener("click", function () {
     calculator = eval(calculator);
-    console.log(calculator);
+    document.getElementById('console-el').innerHTML = calculator;
 });
 document.getElementById("clear-btn").addEventListener("click", function () {
-    calculator = '';
-    console.log(calculator);
+    calculator = '0';
+    document.getElementById('console-el').innerHTML = calculator;
 });
 function calculation(value) {
     calculator += value;
-    console.log(calculator);
+    document.getElementById('console-el').innerHTML = calculator;
 }
