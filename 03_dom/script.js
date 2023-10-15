@@ -23,11 +23,17 @@ subscribeBtn.addEventListener("click", (e) => {
   })
 
   const fetchContent = () => {
-    if (parseInt(inputEl.value) < 40) {
+    if (parseInt(inputEl.value) < 40 && parseInt(inputEl.value) === 0) {
+      document.getElementById("cost-el").style.color = "black";
       document.getElementById("cost-el").innerHTML = `$${
         parseInt(inputEl.value) + 10
       }`;
-    } else {
+    } else if(parseInt(inputEl.value) < 0) {
+      document.getElementById('cost-el').style.color = "red";
+      document.getElementById('cost-el').innerHTML = `Error: cost cannot be less than $0`;
+    }
+    else {
+      document.getElementById("cost-el").style.color = "black";
       document.getElementById("cost-el").innerHTML = `$${parseInt(
         inputEl.value
       )}`;
