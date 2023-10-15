@@ -2,10 +2,12 @@ const subscribeBtn = document.getElementById("subscribe-btn");
 const inputEl = document.getElementById('input-el');
 const calculateBtn = document.getElementById('calculate-btn');
 subscribeBtn.addEventListener("click", (e) => {
-    e.preventDefault();
     if(subscribeBtn.innerText === 'Subscribe'){
         subscribeBtn.innerHTML = "Subscribed";
+        //it will add a class named as is-subscribed
+        subscribeBtn.classList.add('is-subscribed');
     } else {
+      subscribeBtn.classList.remove("is-subscribed");
         subscribeBtn.innerHTML = "Subscribe";
     }
   });

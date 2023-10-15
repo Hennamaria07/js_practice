@@ -4,16 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
-    <button id="rock-btn">Rock</button>
-    <button id="paper-btn">Paper</button>
-    <button id="scissor-btn">Scissors</button>
-    <p id="result-el"></p>
+    <div class="container">
+        <div class="row">
+    <h1 class="title-el">Rock Paper Scissors</h1>
+    <button id="rock-btn" class="move-btn">
+        <img src="./images/rock-emoji.png" class="move-icon" alt="rock">
+    </button>
+    <button id="paper-btn" class="move-btn">
+        <img src="./images/paper-emoji.png" class="move-icon" alt="paper">
+    </button>
+    <button id="scissor-btn" class="move-btn">
+        <img src="./images/scissors-emoji.png" class="move-icon" alt="scissors">
+    </button>
+    <p id="result-el" class="console-result"></p>
     <p id="move-el"></p>
-    <p id="score-el"></p>
-    <button id="reset-btn">Reset Score</button>
+    <p id="score-el" class="score"></p>
+    <p class="btn-el">
+        <button id="reset-btn" class="reset-score">Reset Score</button>
+    </p>
+    </div>
+    </div>
     <script src="./script.js"></script>
 </body>
 </html>

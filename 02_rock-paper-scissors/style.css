@@ -1,0 +1,49 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.container {
+    height: 100vh;
+    width: 100vw;
+    color: #ffffff;
+    background-color: rgb(25, 25, 25);
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title-el{
+    margin: 2rem 0rem;
+}
+.move-icon{
+    width: 60px;
+    height: 60px;
+}
+.move-btn {
+    padding: 15px;
+    font-size: 50px;
+    border-radius: 50%;
+    margin-left: 1rem;
+    border: 1px solid #ffffff;
+    background-color: transparent;
+}
+.console-result {
+    margin: 2rem 0rem;
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: #ffffff;
+}
+.score {
+    margin: 2rem 0rem 1rem 0rem;
+}
+.btn-el {
+    display: flex;
+    justify-content: center;
+}
+.reset-score {
+    background-color: #ffffff;
+    min-width: 100px;
+    padding: 10px;
+    border: none;
+}
