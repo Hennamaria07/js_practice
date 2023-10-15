@@ -1,0 +1,43 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.card-btn {
+    min-width: 200px;
+    padding: 10px 20px;
+    color: #000;
+    background-color: rgb(255, 216, 20);
+    border-radius: 20px;
+    border: none;
+    margin: 1rem 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+.request-btn {
+    min-width: 200px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #000;
+    border-radius: 10px;
+    border: none;
+    margin: 1rem 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+.gaming-btn, .music-btn, .tech-btn, .js-btn, .schedule-btn, .game-btn {
+    min-width: 200px;
+    padding: 10px 20px;
+    color: #000;
+    background-color: rgb(230, 230, 230);
+    border-radius: 10px;
+    border: none;
+    margin: 1rem 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+.is-toggled {
+        background-color: black;
+        color: white;
+      }
