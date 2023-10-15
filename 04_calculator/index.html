@@ -4,28 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>Calculator</h1>
-    <div>
+    <div class="container">
+        <div class="row">
         <p id="console-el"></p>
-        <p><button id="one-btn">1</button>
-        <button id="two-btn">2</button>
-        <button id="three-btn">3</button>
-        <button id="add-btn">+</button></p>
-        <p><button id="four-btn">4</button>
-        <button id="five-btn">5</button>
-        <button id="six-btn">6</button>
-        <button id="sub-btn">-</button></p>
-        <p><button id="seven-btn">7</button>
-        <button id="eight-btn">8</button>
-        <button id="nine-btn">9</button>
-        <button id="mult-btn">*</button></p>
-        <p><button id="zero-btn">0</button>
-        <button id="dot-btn">.</button>
-        <button id="equal-btn">=</button>
-        <button id="divide-btn">/</button></p>
-        <button id="clear-btn">Clear</button>
+        <p><button id="one-btn" class="digit-btn">1</button>
+        <button id="two-btn" class="digit-btn">2</button>
+        <button id="three-btn" class="digit-btn">3</button>
+        <button id="add-btn" class="operator-btn">+</button></p>
+        <p><button id="four-btn" class="digit-btn">4</button>
+        <button id="five-btn" class="digit-btn">5</button>
+        <button id="six-btn" class="digit-btn">6</button>
+        <button id="sub-btn" class="operator-btn">-</button></p>
+        <p><button id="seven-btn" class="digit-btn">7</button>
+        <button id="eight-btn" class="digit-btn">8</button>
+        <button id="nine-btn" class="digit-btn">9</button>
+        <button id="mult-btn" class="operator-btn">*</button></p>
+        <p><button id="zero-btn" class="digit-btn">0</button>
+        <button id="dot-btn" class="digit-btn">.</button>
+        <button id="equal-btn" class="digit-btn">=</button>
+        <button id="divide-btn" class="operator-btn">/</button></p>
+        <button id="clear-btn" class="clear-btn">Clear</button>
+        </div>
     </div>
     <script src="./script.js"></script>
 </body>
