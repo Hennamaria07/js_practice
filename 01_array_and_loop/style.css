@@ -1,0 +1,38 @@
+body {
+    font-family: monospace;
+}
+#list-items {
+    display: grid;
+    grid-template-columns: 202px 202px 102px;
+    gap: 0.5rem;
+}
+.row {
+    margin-bottom: 0.7rem;
+}
+.todo-el {
+    width: 200px;
+    height: 25px;
+}
+.date {
+    width: 200px;
+    height: 26px;
+}
+.add {
+    width: 80px;
+    height: 30px;
+    background: green;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+.delete-btn {
+    width: 100px;
+    height: 30px;
+    background: darkred;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+.pe-1{
+    padding-left: 2px;
+}
