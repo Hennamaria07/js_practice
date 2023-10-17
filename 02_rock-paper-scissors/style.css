@@ -47,4 +47,13 @@
     min-width: 100px;
     padding: 10px;
     border: none;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+.auto-play{
+    background-color: #ffffff;
+    min-width: 100px;
+    padding: 10px;
+    border: none;   
+    cursor: pointer;
 }

@@ -5,6 +5,9 @@ const scoreEl = document.getElementById('score-el');
 const resetBtn = document.getElementById("reset-btn");
 const resultEl = document.getElementById("result-el");
 const moveEl = document.getElementById("move-el");
+const autoBtn = document.getElementById('auto-btn');
+let autoPlay = false;
+let intervalId;
 rockBtn.addEventListener("click", (e) => {
   e.preventDefault();
   playGame("rock");
@@ -97,3 +100,16 @@ function playGame(playerMove) {
   moveEl.innerHTML = `You<img src="./images/${playerMove}-emoji.png" class="move-icon" alt="${playerMove}"> 
     <img src="./images/${computerMove}-emoji.png" class="move-icon" alt="${computerMove}">Computer`;
 }
+autoBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  if(!autoPlay){
+    intervalId = setInterval(() => {
+    const playerMove = pickComputerMove();
+    playGame(playerMove);
+  }, 1000);
+  autoPlay = true;
+  } else {
+    clearInterval(intervalId);
+    autoPlay = false;
+  }
+})
