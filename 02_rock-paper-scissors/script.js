@@ -93,6 +93,8 @@ function playGame(playerMove) {
   } else if (result === "Tie.") {
     score.tie += 1;
   }
+
+  //DISPLAY
   resultEl.innerHTML = result;
   localStorage.setItem("score", JSON.stringify(score));
   // paraEl.innerHTML = `<p>You picked ${playerMove}. Computer picked ${computerMove}. ${result}</p>`;
@@ -100,6 +102,8 @@ function playGame(playerMove) {
   moveEl.innerHTML = `You<img src="./images/${playerMove}-emoji.png" class="move-icon" alt="${playerMove}"> 
     <img src="./images/${computerMove}-emoji.png" class="move-icon" alt="${computerMove}">Computer`;
 }
+
+//AUTOPLAY
 autoBtn.addEventListener('click', (e) => {
   e.preventDefault();
   if(!autoPlay){
@@ -112,4 +116,15 @@ autoBtn.addEventListener('click', (e) => {
     clearInterval(intervalId);
     autoPlay = false;
   }
-})
+});
+
+//KEYDOWN
+document.body.addEventListener('keydown', (e) => {
+  if (e.key === "r") {
+    playGame("rock");
+  } else if (e.key === "p") {
+    playGame("paper");
+  } else if (e.key === "s") {
+    playGame("scissors");
+  }
+});
