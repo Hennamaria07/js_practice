@@ -57,3 +57,16 @@
     border: none;   
     cursor: pointer;
 }
+.toast-header{
+    background-color: rgba(132, 226, 32, 0.577);
+    padding: 1.8rem;
+}
+.confirm-btn {
+    background-color: #ffffff;
+    min-width: 100px;
+    padding: 10px;
+    border: black 1px solid;
+    margin-right: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+}

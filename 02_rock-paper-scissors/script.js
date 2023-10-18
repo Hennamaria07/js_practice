@@ -6,6 +6,9 @@ const resetBtn = document.getElementById("reset-btn");
 const resultEl = document.getElementById("result-el");
 const moveEl = document.getElementById("move-el");
 const autoBtn = document.getElementById('auto-btn');
+
+document.getElementById('confirm-el').style.display = 'none';
+
 let autoPlay = false;
 let intervalId;
 rockBtn.addEventListener("click", (e) => {
@@ -22,6 +25,11 @@ scissorBtn.addEventListener("click", (e) => {
 });
 resetBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  resetConfirm();
+});
+
+//RESET FUNCTION
+const resetScore = () => {
   score.win = 0;
   score.loss = 0;
   score.tie = 0;
@@ -29,7 +37,7 @@ resetBtn.addEventListener("click", (e) => {
   scoreEl.innerHTML = `Wins: ${score.win}, Losses: ${score.loss}, Ties: ${score.tie}`;
   moveEl.innerHTML= '';
   resultEl.innerHTML = '';
-});
+}
 
 let score = JSON.parse(localStorage.getItem("score")) || {
   win: 0,
@@ -103,19 +111,24 @@ function playGame(playerMove) {
     <img src="./images/${computerMove}-emoji.png" class="move-icon" alt="${computerMove}">Computer`;
 }
 
-//AUTOPLAY
-autoBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  if(!autoPlay){
+//AUTOPLAY FUNCTION
+const autoPlayFun = () => {
+  if (!autoPlay) {
     intervalId = setInterval(() => {
-    const playerMove = pickComputerMove();
-    playGame(playerMove);
-  }, 1000);
-  autoPlay = true;
+      const playerMove = pickComputerMove();
+      playGame(playerMove);
+    }, 1000);
+    autoPlay = true;
+    autoBtn.innerHTML = "Stop Playing";
   } else {
     clearInterval(intervalId);
     autoPlay = false;
+    autoBtn.innerHTML = "Auto Play";
   }
+}
+autoBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  autoPlayFun();
 });
 
 //KEYDOWN
@@ -126,5 +139,21 @@ document.body.addEventListener('keydown', (e) => {
     playGame("paper");
   } else if (e.key === "s") {
     playGame("scissors");
+  } else if (e.key === "a") {
+    autoPlayFun();
+  } else if (e.key === "Backspace") {
+    resetScore();
   }
 });
+
+//RESET CONFIRM FUNCTION
+const resetConfirm = () => {
+  document.getElementById("confirm-el").style.display = "block";
+  document.getElementById('yes-btn').addEventListener('click', (e) => {
+  document.getElementById("confirm-el").style.display = "none";
+  resetScore();
+  });
+  document.getElementById('no-btn').addEventListener('click', (e) => {
+  document.getElementById("confirm-el").style.display = "none";
+  })
+}

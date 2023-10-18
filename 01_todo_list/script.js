@@ -20,13 +20,18 @@ const render = (todoList) => {
   for(let i = 0; i < todoList.length; i++){
     listItems += `<div class="pe-1">${todoList[i].name}</div>
     <div class="pe-1">${todoList[i].dueDate}</div>
-    <button class="delete-btn" onclick="
-    todoList.splice(${i}, 1);
-    render(todoList); <!--after delete it will displlay the list items-->
+    <button class="delete-btn"
     ">Delete</button>
     `;
   }
   ulEl.innerHTML = listItems;
+  document.querySelectorAll('.delete-btn')
+  .forEach((value, index) => {
+    value.addEventListener('click', () => {
+       todoList.splice(index, 1);
+       render(todoList);
+    })
+  })
 }
 
 

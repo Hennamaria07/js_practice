@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="./style.css">
+    
 </head>
 <body>
     <div class="container">
         <div class="row">
+            <div class="toast-header" id="confirm-el">
+                <strong class="confirm-text-el">Are you sure you want to reset the score?</strong><br>
+                <button type="button" class="confirm-btn" id="yes-btn">Yes</button>
+                <button type="button" class="confirm-btn" id="no-btn" data-bs-dismiss="toast">No</button>
+            </div>
     <h1 class="title-el">Rock Paper Scissors</h1>
     <button id="rock-btn" class="move-btn">
         <img src="./images/rock-emoji.png" class="move-icon" alt="rock">
